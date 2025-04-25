@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report Item</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+  <h1>LOST AND FOUND MANAGEMENT SYSTEM</h1>
+  <h2>Report Lost or Found Item</h2>
+  <form method="post" class="report-form">
+    <label>Title</label><br>
+    <input type="text" name="title"><br>
+    <label>Description</label><br>
+    <textarea name="description"></textarea><br>
+    <label>Status</label><br>
+    <select name="status">
+      <option value="lost">Lost</option>
+      <option value="found">Found</option>
+    </select><br>
+    <label>Category</label><br>
+    <input type="text" name="category"><br>
+    <label>Location</label><br>
+    <input type="text" name="location"><br><br>
+    <label>Contact Number</label><br>
+    <input type="number" name="contact"><br><br>
+    <input class="report-submit-btn" type="submit" value="Submit">
+  </form>
+</body>
+</html>

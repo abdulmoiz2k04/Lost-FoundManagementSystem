@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+<h1>LOST AND FOUND MANAGEMENT SYSTEM</h1>
+<h2>Login</h2>
+<form method="POST" class="login-form">
+  <span class="input-label">Email</span> <input name="email"><br>
+  <span class="input-label">Password</span> <input name="password" type="password"><br>
+  <button type="submit">Login</button>
+</form>
+<a href="/register" class="below-form-btn">Don't have an account?</a>
+</body>
+</html>

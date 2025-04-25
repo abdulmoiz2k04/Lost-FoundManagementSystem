@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Report</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+<h1>LOST AND FOUND MANAGEMENT SYSTEM</h1>
+<h2>Edit Item</h2>
+<form method="post" class="edit-form">
+  Title <input name="title" value="{{ item.title }}"><br>
+  Description <textarea name="description">{{ item.description }}</textarea><br>
+  Status 
+  <select name="status">
+    <option value="lost" {% if item.status == 'lost' %}selected{% endif %}>Lost</option>
+    <option value="found" {% if item.status == 'found' %}selected{% endif %}>Found</option>
+    <option value="claimed" {% if item.status == 'claimed' %}selected{% endif %}>Claimed</option>
+  </select><br>
+  Category <input name="category" value="{{ item.category }}"><br>
+  Location <input name="location" value="{{ item.location }}"><br>
+  Contact Number <input name="contact" value="{{ item.contact }}"><br>
+  <button type="submit" class="edit-save-btn">Save Changes</button>
+</form>
+</body>
+</html>

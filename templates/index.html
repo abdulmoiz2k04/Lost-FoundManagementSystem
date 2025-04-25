@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lost & Found System</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"
+</head>
+<body>
+<h1>LOST AND FOUND MANAGEMENT SYSTEM</h1>
+{% if session.get('user_id') %}
+  <p class="user-welcome">Welcome, {{ session.name }} | <a href="/logout">Logout</a></p>
+  <a href="/report" class="report-btn">Report Lost/Found Item</a>
+{% else %}
+  <div class="login-signup-btn"><a href="/login">Login</a> <a href="/register">Register</a></div>
+{% endif %}
+
+<form method="GET" action="/" class="search-form">
+  Search <input type="text" name="q" value="{{ request.args.get('q', '') }}">
+  Status
+  <select name="status">
+    <option value="">All</option>
+    <option value="lost" {% if request.args.get('status') == 'lost' %}selected{% endif %}>Lost</option>
+    <option value="found" {% if request.args.get('status') == 'found' %}selected{% endif %}>Found</option>
+    <option value="claimed" {% if request.args.get('status') == 'claimed' %}selected{% endif %}>Claimed</option>
+  </select>
+  <button type="submit">Apply</button>
+</form>
+
+<h2>All Reported Items</h2>
+<ol class="reported-items">
+  {% for item in items %}
+  <li>
+    {{ item.title }} - <strong>{{ item.status }} at {{ item.location }}</strong> <br><strong>Contact Number:</strong> {{item.contact}}
+    {% if session.get('user_id') == item.user_id %}
+       <a href="/edit/{{ item.item_id }}" class="edit-btn">Edit</a>
+       <a href="/delete/{{ item.item_id }}" class="del-btn" onclick="return confirm('Delete this item?')">Delete</a>
+    {% elif session.get('user_id') and item.status == 'found' %}
+       <a href="/claim/{{ item.item_id }}" class="claim-btn">Claim</a>
+    {% endif %}
+  </li>
+  __________________________________________________________________________________________
+  {% endfor %}
+</ol>
+
+</body>
+</html>
