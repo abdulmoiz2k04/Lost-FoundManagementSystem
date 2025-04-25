@@ -5,7 +5,6 @@ A simple web-based application built using Python (Flask), MySQL that allows use
 - User registration and login
 - Add lost or found item reports
 - View all reported items with status
-- Claim lost items if you're not the owner
 - Edit or delete your own reports
 - Search and filter items by keyword and status
 - Clean, glassy UI with full background image
