@@ -8,9 +8,9 @@
 <h1>LOST AND FOUND MANAGEMENT SYSTEM</h1>
 <h2>Register</h2>
 <form method="POST" class="register-form">
-  <span class="input-label">Name</span> <input name="name"><br>
-  <span class="input-label">Email</span> <input name="email"><br>
-  <span class="input-label">Password</span> <input name="password" type="password"><br>
+  <span class="input-label">Name</span> <input type="text" name="name" required minlength="3" maxlength="100" placeholder="Enter Your Name"><br>
+  <span class="input-label">Email</span> <input type="email" name="email" required placeholder="Enter your email"><br>
+  <span class="input-label">Password</span> <input type="password" name="password" required minlength="6" maxlength="20" placeholder="Set your password"><br>
   <button type="submit">Register</button>
 </form>
 <a href="/login" class="below-form-btn">Already have an account?</a>

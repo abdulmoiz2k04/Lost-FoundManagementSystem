@@ -8,17 +8,17 @@
 <h1>LOST AND FOUND MANAGEMENT SYSTEM</h1>
 <h2>Edit Item</h2>
 <form method="post" class="edit-form">
-  Title <input name="title" value="{{ item.title }}"><br>
-  Description <textarea name="description">{{ item.description }}</textarea><br>
+  Title <input name="title" value="{{ item.title }}" type="text" required minlength="3" maxlength="100" placeholder="Enter a short title"><br>
+  Description <textarea name="description" required minlength="10" maxlength="500" placeholder="Describe the item">{{ item.description }}</textarea><br>
   Status 
-  <select name="status">
+  <select name="status" required>
     <option value="lost" {% if item.status == 'lost' %}selected{% endif %}>Lost</option>
     <option value="found" {% if item.status == 'found' %}selected{% endif %}>Found</option>
     <option value="claimed" {% if item.status == 'claimed' %}selected{% endif %}>Claimed</option>
   </select><br>
-  Category <input name="category" value="{{ item.category }}"><br>
-  Location <input name="location" value="{{ item.location }}"><br>
-  Contact Number <input name="contact" value="{{ item.contact }}"><br>
+  Category <input name="category" value="{{ item.category }}" type="text" required minlength="3" maxlength="50" placeholder="E.g., Electronics, Clothing"><br>
+  Location <input name="location" value="{{ item.location }}" type="text" required minlength="3" maxlength="100" placeholder="Where was it lost/found?"><br>
+  Contact Number <input name="contact" value="{{ item.contact }}" type="number" required pattern="[0-9]{11}" placeholder="Enter 11-digit contact number"><br>
   <button type="submit" class="edit-save-btn">Save Changes</button>
 </form>
 </body>

@@ -9,20 +9,21 @@
   <h2>Report Lost or Found Item</h2>
   <form method="post" class="report-form">
     <label>Title</label><br>
-    <input type="text" name="title"><br>
+    <input type="text" name="title" required minlength="3" maxlength="100" placeholder="Enter a short title"><br>
     <label>Description</label><br>
-    <textarea name="description"></textarea><br>
+    <textarea name="description" required minlength="10" maxlength="500" placeholder="Describe the item"></textarea><br>
     <label>Status</label><br>
-    <select name="status">
+    <select name="status" required>
+      <option value="">--Select Status--</option>
       <option value="lost">Lost</option>
       <option value="found">Found</option>
     </select><br>
     <label>Category</label><br>
-    <input type="text" name="category"><br>
+    <input type="text" name="category" required minlength="3" maxlength="50" placeholder="E.g., Electronics, Clothing"><br>
     <label>Location</label><br>
-    <input type="text" name="location"><br><br>
+    <input type="text" name="location" required minlength="3" maxlength="100" placeholder="Where was it lost/found?"><br><br>
     <label>Contact Number</label><br>
-    <input type="number" name="contact"><br><br>
+    <input type="number" name="contact" required pattern="[0-9]{11}" placeholder="Enter 11-digit contact number"><br><br>
     <input class="report-submit-btn" type="submit" value="Submit">
   </form>
 </body>
