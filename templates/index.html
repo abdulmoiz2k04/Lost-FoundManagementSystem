@@ -2,10 +2,11 @@
 <html>
 <head>
   <title>Lost & Found System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"
 </head>
 <body>
-<h1>LOST AND FOUND MANAGEMENT SYSTEM</h1>
+<h1><a href="/">LOST AND FOUND MANAGEMENT SYSTEM</a></h1>
 {% if session.get('user_id') %}
   <p class="user-welcome">Welcome, {{ session.name }} | <a href="/logout">Logout</a></p>
   <a href="/report" class="report-btn">Report Lost/Found Item</a>
@@ -37,7 +38,7 @@
        <a href="/claim/{{ item.item_id }}" class="claim-btn">Claim</a>
     {% endif %}
   </li>
-  __________________________________________________________________________________________
+  <p class="sep-line">__________________________________________________________________________________________</p>
   {% endfor %}
 </ol>
 

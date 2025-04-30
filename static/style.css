@@ -258,12 +258,19 @@ h2 {
     padding: 5px 10px 5px 10px;
     margin-left: 10px;
 }
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+@media only screen and (max-width: 600px) {
 
-@media (max-width: 768px) {
-    .login-form, .register-form, .report-form, .edit-form, .reported-items, .report-btn {
+    .login-form, .register-form, .report-form, .edit-form {
       width: 90%;
       margin-left: auto;
       margin-right: auto;
+    }
+    .reported-items, .report-btn {
+        width: 80%;
     }
   
     .search-form {
@@ -271,22 +278,26 @@ h2 {
       gap: 10px;
     }
   
-    .search-form input,
+    .search-form input {
+        width: 83%;
+    }
     .search-form select,
     .search-form button {
-      width: 100%;
-      margin: 5px 0;
+      width: 86%;
+      margin-bottom: 5px;
     }
   
     h1, h2 {
       font-size: 1.5rem;
       padding: 10px;
     }
-  
+    .sep-line{
+        display: none;
+    }
     .edit-btn,
     .del-btn,
     .claim-btn {
-      width: 100%;
+      width: 87%;
       margin: 10px 0;
     }
   }
