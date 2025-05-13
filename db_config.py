@@ -2,8 +2,8 @@ import mysql.connector
 
 def connect_db():
     return mysql.connector.connect(
-        host="",
-        user="",
-        password="",
-        database=""
+        host="sql12.freesqldatabase.com",
+        user="sql12775243",
+        password="xA3WfCDYSy",
+        database="sql12775243"
     )
